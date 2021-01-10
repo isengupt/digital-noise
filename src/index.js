@@ -124,7 +124,30 @@ function App() {
     // setMouseTarget((e) => ({ x: e.x - 0.1 * (e.x - mouse.current.x), y: e.y - 0.1 * (e.y - mouse.current.y) }))
   }
   return (
+    <>
+      <div className="frame">
+        <h1 className="frame__title">AUDIO VISUALIZATION</h1>
+        <div className="frame__links"></div>
+        <div className="frame__nav">
+          <a
+            className="frame__link"
+            href="https://isengupt.github.io/fiber-website/"
+          >
+            Previous
+          </a>
+          <a className="frame__link" href="#">
+            Resume
+          </a>
+          <a
+            className="frame__link"
+            href="https://github.com/isengupt/digital-noise/"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
     <div className="container" onMouseMove={(e) => mouseMoved(e)}>
+    
       <Canvas colorManagement={false} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Html center className="loading" children="Loading..." />}>
           <Content mouseMoved={mouseMoved} mouseTarget={mouseTarget} mouse={mouse} />
@@ -139,6 +162,7 @@ function App() {
         ))}
       </div>
     </div>
+    </>
   )
 }
 
